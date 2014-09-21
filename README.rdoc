@@ -1,28 +1,55 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This github repository is a collection of slides that I've written to help people (initially my son)
+help learn ruby / rails.  Its really a way to store a collection of keynote slides in the framework
+of a Rails 4.x application that can be used as a starting point skeleton for anything you want to build.
 
-Things you may want to cover:
+Here's how to get started with this:
 
-* Ruby version
+* Create your own github account
 
-* System dependencies
+* Goto http://www.github.com/fuzzygroup/rails101
 
-* Configuration
+* Click the fork button
 
-* Database creation
+This "forks" the Repo into your own personal github account and gives you your own copy of it.
 
-* Database initialization
+The next step is get it checked out onto your own development machine.  Here's how to do that:
 
-* How to run the test suite
+On your own machine, in the directory ~/.ssh/ look for a file named id_rsa.pub i.e.
 
-* Services (job queues, cache servers, search engines, etc.)
+ls -l ~/.ssh/id_rsa.pub or dir ~/.ssh/id_rsa.pub
 
-* Deployment instructions
+If that file exists then you want to cat it to the screen and copy its contents to the clipboard i.e.
 
-* ...
+On a mac:
 
+cat ~/.ssh/id_rsa.pub | pbcopy
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+On windows:
+
+I honestly have no idea in 2014
+
+You now need to tell github that your machine is, well, your machine.  Bear in mind that when you log
+into github in a browser, there's no relationship between that browser and your machine's command line terminal.
+So you need to tell github about your terminal (really about ssh but ...) so you need to give github the contents
+of that file.  This, id_rsa.pub, is an ssh level cryptographic key which your terminal uses to communicate with
+github.  So go into github and find your repository that you just forked and then click on the Settings link on the
+right hand side and then click on Deploy Keys and then Add deploy key and give it a name and the contents of your
+clipboard.
+
+You can now "clone" this file down to your own machine.  Start by making a ~/rails directory on your computer:
+
+mkdir ~/rails
+
+and then change into it:
+
+cd ~/rails
+git clone http://github.com/YOUR_ACCOUNT_NAME/rails101 .
+
+And that will clone down your repo and if you look in the docs/ directory you will find a set of keynote presentations
+about learning rails or "Rails 101"
+
+Enjoy !
+
+Scott
